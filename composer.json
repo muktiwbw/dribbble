@@ -15,7 +15,8 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/passport": "^9.3",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "ext-pdo_sqlite": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
