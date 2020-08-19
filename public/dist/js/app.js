@@ -42,7 +42,7 @@ if (formLogin) formLogin.onsubmit = async function(e) {
   const password = this.querySelector('input[type="password"]').value;
 
   try {
-    const res = await axios.post('http://localhost:8000/api/v1/login', {email, password});
+    const res = await axios.post('http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/login', {email, password});
     
     if (res) window.location = '/';
   } catch (error) {
@@ -64,7 +64,7 @@ document.querySelector('#btnFormSubmit').onclick = async function() {
 
   try {
     const token = document.querySelector('meta[token]').getAttribute('token');
-    const res = await axios.post('http://localhost:8000/api/v1/posts', form, {
+    const res = await axios.post('http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/posts', form, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -86,7 +86,7 @@ document.querySelector('#btnFormSubmit').onclick = async function() {
 async function submitLove(post_id) {
   try {
     const token = document.querySelector('meta[token]').getAttribute('token');
-    const res = await axios.patch(`http://localhost:8000/api/v1/posts/${post_id}/like`, {}, {
+    const res = await axios.patch(`http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/posts/${post_id}/like`, {}, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -99,7 +99,7 @@ async function submitLove(post_id) {
 async function removeLove(post_id) {
   try {
     const token = document.querySelector('meta[token]').getAttribute('token');
-    const res = await axios.delete(`http://localhost:8000/api/v1/posts/${post_id}/like`, {
+    const res = await axios.delete(`http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/posts/${post_id}/like`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -112,7 +112,7 @@ async function removeLove(post_id) {
 async function fetchAllPosts() {
   try {
     const token = document.querySelector('meta[token]').getAttribute('token');
-    const res = await axios.get('http://localhost:8000/api/v1/posts', {
+    const res = await axios.get('http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/posts', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -164,7 +164,7 @@ async function fetchAllPosts() {
 
 if (btnLogout) btnLogout.onclick = async function() {
   try {
-    const res = await axios.post('http://localhost:8000/api/v1/logout');
+    const res = await axios.post('http://mukti-wibowo-laravel-code-test.herokuapp.com/api/v1/logout');
     
     if (res) window.location = '/';
   } catch (error) {
